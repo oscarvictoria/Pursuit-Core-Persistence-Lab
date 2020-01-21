@@ -14,6 +14,7 @@
 		BE10F04D23D6B12000A9313E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10F04C23D6B12000A9313E /* PhotoCell.swift */; };
 		BE10F04F23D6B1A700A9313E /* PhotosAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10F04E23D6B1A700A9313E /* PhotosAPIClient.swift */; };
 		BE10F05123D6B39B00A9313E /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10F05023D6B39B00A9313E /* Photos.swift */; };
+		BE10F05723D6BDA200A9313E /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE10F05623D6BDA200A9313E /* Secrets.swift */; };
 		BE775FA023D269FC00002017 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE775F9F23D269FC00002017 /* AppDelegate.swift */; };
 		BE775FA223D269FC00002017 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE775FA123D269FC00002017 /* SceneDelegate.swift */; };
 		BE775FA423D269FC00002017 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE775FA323D269FC00002017 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		BE10F04C23D6B12000A9313E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		BE10F04E23D6B1A700A9313E /* PhotosAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIClient.swift; sourceTree = "<group>"; };
 		BE10F05023D6B39B00A9313E /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		BE10F05623D6BDA200A9313E /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		BE775F9C23D269FC00002017 /* PersistenceLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersistenceLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE775F9F23D269FC00002017 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE775FA123D269FC00002017 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		BE10F05523D6BD3100A9313E /* Secrets */ = {
 			isa = PBXGroup;
 			children = (
+				BE10F05623D6BDA200A9313E /* Secrets.swift */,
 			);
 			path = Secrets;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE775FA423D269FC00002017 /* ViewController.swift in Sources */,
+				BE10F05723D6BDA200A9313E /* Secrets.swift in Sources */,
 				BE775FA023D269FC00002017 /* AppDelegate.swift in Sources */,
 				BE10F04B23D6B00100A9313E /* DetailViewController.swift in Sources */,
 				BE10F04923D6AFDA00A9313E /* FavoritesViewController.swift in Sources */,
