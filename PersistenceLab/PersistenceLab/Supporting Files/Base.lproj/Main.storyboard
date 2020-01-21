@@ -64,6 +64,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3T1-cl-BUI"/>
                     <connections>
+                        <outlet property="searchBar" destination="yJz-5f-x1y" id="uwd-yE-xL5"/>
                         <outlet property="tableView" destination="zdh-Tc-ocK" id="zre-eT-Lzz"/>
                     </connections>
                 </viewController>
@@ -79,16 +80,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrL-98-CFn">
-                                <rect key="frame" x="180" y="470" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrL-98-CFn">
+                                <rect key="frame" x="179.5" y="570" width="55" height="30"/>
                                 <state key="normal" title="Favorite"/>
+                                <connections>
+                                    <action selector="favorite:" destination="at8-Z7-pNJ" eventType="touchUpInside" id="6Hp-dy-4Yi"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aoX-31-Z4V">
+                                <rect key="frame" x="0.0" y="88" width="414" height="290"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="likes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMQ-0u-TRE">
+                                <rect key="frame" x="0.0" y="438" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tags" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGy-Rc-ruD">
+                                <rect key="frame" x="0.0" y="499" width="414" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UrL-98-CFn" firstAttribute="centerX" secondItem="NCl-4u-k5g" secondAttribute="centerX" id="0in-Ct-Bxs"/>
+                            <constraint firstItem="aoX-31-Z4V" firstAttribute="trailing" secondItem="hh2-Ea-zlX" secondAttribute="trailing" id="9Gc-XV-VQf"/>
+                            <constraint firstItem="iMQ-0u-TRE" firstAttribute="leading" secondItem="hh2-Ea-zlX" secondAttribute="leading" id="IPw-5Q-mdp"/>
+                            <constraint firstItem="CGy-Rc-ruD" firstAttribute="top" secondItem="iMQ-0u-TRE" secondAttribute="bottom" constant="40" id="JJc-FG-2Og"/>
+                            <constraint firstItem="hh2-Ea-zlX" firstAttribute="trailing" secondItem="CGy-Rc-ruD" secondAttribute="trailing" id="Ncq-pE-xSF"/>
+                            <constraint firstItem="hh2-Ea-zlX" firstAttribute="trailing" secondItem="iMQ-0u-TRE" secondAttribute="trailing" id="bbq-LH-tNY"/>
+                            <constraint firstItem="iMQ-0u-TRE" firstAttribute="top" secondItem="aoX-31-Z4V" secondAttribute="bottom" constant="60" id="dFz-g3-gRx"/>
+                            <constraint firstItem="aoX-31-Z4V" firstAttribute="leading" secondItem="hh2-Ea-zlX" secondAttribute="leading" id="iCb-M9-R1x"/>
+                            <constraint firstItem="aoX-31-Z4V" firstAttribute="top" secondItem="hh2-Ea-zlX" secondAttribute="top" id="lG3-fA-mK7"/>
+                            <constraint firstItem="CGy-Rc-ruD" firstAttribute="leading" secondItem="hh2-Ea-zlX" secondAttribute="leading" id="oxN-nV-Wc2"/>
+                            <constraint firstItem="aoX-31-Z4V" firstAttribute="height" secondItem="hh2-Ea-zlX" secondAttribute="height" multiplier="0.4" id="q3P-Z8-7c8"/>
+                            <constraint firstItem="UrL-98-CFn" firstAttribute="top" secondItem="CGy-Rc-ruD" secondAttribute="bottom" constant="50" id="vBn-wa-ZVj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hh2-Ea-zlX"/>
                     </view>
                     <navigationItem key="navigationItem" id="sTn-8j-aA1"/>
+                    <connections>
+                        <outlet property="detailImageView" destination="aoX-31-Z4V" id="euF-Ch-bp5"/>
+                        <outlet property="likesLabel" destination="iMQ-0u-TRE" id="MLM-Ma-YQQ"/>
+                        <outlet property="tagsLabel" destination="CGy-Rc-ruD" id="afx-Ru-3QF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQ6-ci-c5m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

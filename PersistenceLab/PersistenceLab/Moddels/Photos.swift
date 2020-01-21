@@ -13,5 +13,7 @@ struct Photos: Codable {
 }
 
 struct Hits: Codable {
-    let largeImageURL: String 
+    let largeImageURL: String
+    let likes: Int
+    let tags: String
 }

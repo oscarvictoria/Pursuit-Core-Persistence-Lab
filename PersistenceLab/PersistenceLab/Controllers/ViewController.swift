@@ -12,7 +12,7 @@ import ImageKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-//    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     var pictures = [Hits]() {
@@ -27,8 +27,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-//        searchBar.delegate = self
-        loadPhotos()
+        searchBar.delegate = self
     }
 
     func loadPhotos() {
@@ -40,6 +39,15 @@ class ViewController: UIViewController {
                 self.pictures = photos
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let photosDVC = segue.destination as? DetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow else {
+                return
+        }
+        let photos = pictures[indexPath.row]
+        photosDVC.pictures = photos
     }
 
 }
@@ -70,6 +78,23 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 400
     }
 }
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else {
+            return
+        }
+        PhotosAPIClient.getPhotos(searchQuery: searchText) { (result) in
+                switch result {
+                case .failure(let appError):
+                    print("\(appError)")
+                case .success(let photos):
+                    self.pictures = photos
+                }
+            }
+        }
+    }
+
