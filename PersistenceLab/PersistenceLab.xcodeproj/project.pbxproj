@@ -90,6 +90,13 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BE10F05523D6BD3100A9313E /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
 		BE775F9323D269FC00002017 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +116,7 @@
 		BE775F9E23D269FC00002017 /* PersistenceLab */ = {
 			isa = PBXGroup;
 			children = (
+				BE10F05523D6BD3100A9313E /* Secrets */,
 				BE10F04723D6AEF900A9313E /* Supporting Files */,
 				BE10F04623D6AEEF00A9313E /* Moddels */,
 				BE10F04423D6AED000A9313E /* APIClient */,
