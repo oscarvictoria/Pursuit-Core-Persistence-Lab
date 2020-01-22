@@ -10,9 +10,18 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-@IBOutlet weak var favoriteLabel:UIButton!
+    @IBOutlet weak var favoriteLabel:UIButton!
     
     var pictures: Hits?
+    
+    var testNumber = 1
+    
+    func testing() {
+        if testNumber == 0 {
+            favoriteLabel.isHidden = true
+            favoriteLabel.isEnabled = false
+        }
+    }
     
     
     @IBOutlet weak var detailImageView: UIImageView!
@@ -22,10 +31,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        favoriteLabel.isEnabled = true
+        testing()
     }
-
-
+    
+    
     func updateUI() {
+        
         guard let photos = pictures else {
             fatalError("could not get cell")
         }
@@ -44,19 +56,25 @@ class DetailViewController: UIViewController {
         }
     }
     
- 
-
+    
+    
     @IBAction func favorite(_ sender: UIButton) {
-        guard let theImage = pictures else {
-            return
+        if testNumber >= 1 {
+            guard let theImage = pictures else {
+                return
+            }
+            do {
+                try PersistanceHelper.save(event: theImage)
+                print("succesfully saved image")
+            } catch {
+                print("error saving event with error \(error)")
+            }
+        } else {
+            favoriteLabel.isHidden = true
+            favoriteLabel.isEnabled = false 
         }
-        do {
-            try PersistanceHelper.save(event: theImage)
-            print("succesfully saved image")
-          } catch {
-              print("error saving event with error \(error)")
-          }
-
+        
+        
     }
     
 }

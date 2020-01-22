@@ -49,6 +49,7 @@ class FavoritesViewController: UIViewController {
             
             let photos = favorites[indexPath.row]
             favoritesDVC.pictures = photos
+            favoritesDVC.testNumber = 0
         }
        
     }
