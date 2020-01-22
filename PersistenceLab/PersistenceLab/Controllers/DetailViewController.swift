@@ -42,8 +42,8 @@ class DetailViewController: UIViewController {
             fatalError("could not get cell")
         }
         
-        likesLabel.text = photos.likes.description
-        tagsLabel.text = photos.tags
+        likesLabel.text = "Likes: \(photos.likes.description)"
+        tagsLabel.text = "Tags: \(photos.tags)"
         detailImageView.getImage(with: photos.largeImageURL) { (result) in
             switch result {
             case .failure(let appError):
@@ -64,7 +64,7 @@ class DetailViewController: UIViewController {
                 return
             }
             do {
-                try PersistanceHelper.save(event: theImage)
+                try PersistanceHelper.save(pictures: theImage)
                 print("succesfully saved image")
             } catch {
                 print("error saving event with error \(error)")

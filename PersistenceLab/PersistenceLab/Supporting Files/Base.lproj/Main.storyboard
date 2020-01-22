@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PersistenceLab" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3T1-cl-BUI"/>
+                    <navigationItem key="navigationItem" title="Search" id="3T1-cl-BUI"/>
                     <connections>
                         <outlet property="searchBar" destination="yJz-5f-x1y" id="uwd-yE-xL5"/>
                         <outlet property="tableView" destination="zdh-Tc-ocK" id="zre-eT-Lzz"/>
@@ -151,7 +151,7 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
         </scene>
-        <!--Favorites View Controller-->
+        <!--Favorites-->
         <scene sceneID="PzS-Bc-34u">
             <objects>
                 <viewController id="LQC-nq-GMJ" customClass="FavoritesViewController" customModule="PersistenceLab" customModuleProvider="target" sceneMemberID="viewController">
@@ -198,7 +198,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7ow-qa-4sU"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pHB-F9-sa3"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="pHB-F9-sa3"/>
                     <connections>
                         <outlet property="tableView" destination="qvw-0l-07H" id="t04-NJ-7FK"/>
                     </connections>
@@ -247,6 +247,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EGl-uA-hEp"/>
+        <segue reference="C6B-KY-f31"/>
     </inferredMetricsTieBreakers>
 </document>

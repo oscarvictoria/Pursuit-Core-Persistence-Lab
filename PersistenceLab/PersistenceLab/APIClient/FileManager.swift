@@ -19,7 +19,7 @@ enum DataPersistanceError: Error { // conforming to the Error protocol
 class PersistanceHelper {
     // CRUD - create, read, update, delete
     
-    private static var events = [Hits]()
+    private static var photos = [Hits]()
     
     private static let filename = "photos.plist"
     
@@ -34,7 +34,7 @@ class PersistanceHelper {
         // we will use the data object and write (save) it to documents directory
         do {
             // convert (serialize) the events array to Data
-            let data = try PropertyListEncoder().encode(events)
+            let data = try PropertyListEncoder().encode(photos)
             
             // writes, saves, persist the data to the documents directory
             try data.write(to: url, options: .atomic)
@@ -44,11 +44,11 @@ class PersistanceHelper {
     }
     
     
-    static func save(event: Hits) throws {
+    static func save(pictures: Hits) throws {
 //        let url = FileManager.pathToDocumentsDirectory(with: filename)
         
         // append new event to the events array
-        events.append(event)
+        photos.append(pictures)
         
         try save()
         
@@ -74,7 +74,7 @@ class PersistanceHelper {
             
             if let data = FileManager.default.contents(atPath: url.path) {
                 do {
-                    events = try PropertyListDecoder().decode([Hits].self, from: data)
+                    photos = try PropertyListDecoder().decode([Hits].self, from: data)
                 } catch {
                     throw DataPersistanceError.decodingError(error)
                 }
@@ -85,15 +85,15 @@ class PersistanceHelper {
         } else {
             throw DataPersistanceError.fileDoesNotExist(filename)
         }
-         return events
+         return photos
     }
         
         // update -
         
         
         // delete - remove items from documents directory
-    static func delete(event index: Int) throws {
-        events.remove(at: index)
+    static func delete(photos index: Int) throws {
+        photos.remove(at: index)
         
         // save our events array to the documents directory
         do {
