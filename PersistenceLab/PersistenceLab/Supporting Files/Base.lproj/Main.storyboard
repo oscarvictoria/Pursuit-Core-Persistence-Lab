@@ -39,7 +39,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="photoImageView" destination="UsW-dk-3Jo" id="vFH-EN-aaq"/>
-                                            <segue destination="at8-Z7-pNJ" kind="show" id="EGl-uA-hEp"/>
+                                            <segue destination="at8-Z7-pNJ" kind="show" identifier="firstSegue" id="EGl-uA-hEp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -123,6 +123,7 @@
                     <navigationItem key="navigationItem" id="sTn-8j-aA1"/>
                     <connections>
                         <outlet property="detailImageView" destination="aoX-31-Z4V" id="euF-Ch-bp5"/>
+                        <outlet property="favoriteLabel" destination="UrL-98-CFn" id="MA8-eo-Xez"/>
                         <outlet property="likesLabel" destination="iMQ-0u-TRE" id="MLM-Ma-YQQ"/>
                         <outlet property="tagsLabel" destination="CGy-Rc-ruD" id="afx-Ru-3QF"/>
                     </connections>
@@ -182,7 +183,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="photoImageView" destination="GMg-gz-9Ki" id="5BA-ge-Pio"/>
-                                            <segue destination="at8-Z7-pNJ" kind="show" id="C6B-KY-f31"/>
+                                            <segue destination="at8-Z7-pNJ" kind="show" identifier="favoritesDVC" id="C6B-KY-f31"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -198,6 +199,9 @@
                         <viewLayoutGuide key="safeArea" id="7ow-qa-4sU"/>
                     </view>
                     <navigationItem key="navigationItem" id="pHB-F9-sa3"/>
+                    <connections>
+                        <outlet property="tableView" destination="qvw-0l-07H" id="t04-NJ-7FK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Gw-OY-QZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

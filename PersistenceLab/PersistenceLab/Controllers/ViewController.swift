@@ -22,14 +22,15 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
+        //        print(NSHomeDirectory())
     }
-
+    
     func loadPhotos() {
         PhotosAPIClient.getPhotos(searchQuery: "new york") { (result) in
             switch result {
@@ -42,14 +43,16 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let photosDVC = segue.destination as? DetailViewController,
-            let indexPath = tableView.indexPathForSelectedRow else {
-                return
+        if segue.identifier == "firstSegue" {
+            guard let photosDVC = segue.destination as? DetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else {
+                    return
+            }
+            let photos = pictures[indexPath.row]
+            photosDVC.pictures = photos
+            
         }
-        let photos = pictures[indexPath.row]
-        photosDVC.pictures = photos
     }
-
 }
 
 extension ViewController: UITableViewDataSource {
@@ -88,13 +91,13 @@ extension ViewController: UISearchBarDelegate {
             return
         }
         PhotosAPIClient.getPhotos(searchQuery: searchText) { (result) in
-                switch result {
-                case .failure(let appError):
-                    print("\(appError)")
-                case .success(let photos):
-                    self.pictures = photos
-                }
+            switch result {
+            case .failure(let appError):
+                print("\(appError)")
+            case .success(let photos):
+                self.pictures = photos
             }
         }
     }
+}
 

@@ -10,7 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+@IBOutlet weak var favoriteLabel:UIButton!
+    
     var pictures: Hits?
+    
     
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var likesLabel: UILabel!
@@ -21,10 +24,12 @@ class DetailViewController: UIViewController {
         updateUI()
     }
 
+
     func updateUI() {
         guard let photos = pictures else {
             fatalError("could not get cell")
         }
+        
         likesLabel.text = photos.likes.description
         tagsLabel.text = photos.tags
         detailImageView.getImage(with: photos.largeImageURL) { (result) in
@@ -37,12 +42,21 @@ class DetailViewController: UIViewController {
                 }
             }
         }
-     
     }
     
-    
+ 
+
     @IBAction func favorite(_ sender: UIButton) {
-        
+        guard let theImage = pictures else {
+            return
+        }
+        do {
+            try PersistanceHelper.save(event: theImage)
+            print("succesfully saved image")
+          } catch {
+              print("error saving event with error \(error)")
+          }
+
     }
     
 }
